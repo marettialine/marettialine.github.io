@@ -30,9 +30,15 @@ export function Header() {
         <NavLink to="/" title="Contato">
           Contato
         </NavLink>
-        <NavLink to="/" title="Currículo" className="cv">
+        <a
+          href="https://marettialine.github.io/CV.pdf"
+          title="Currículo"
+          className="cv"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FilePdf size={20} weight="fill" /> Currículo
-        </NavLink>
+        </a>
       </nav>
     </HeaderContainer>
   )
