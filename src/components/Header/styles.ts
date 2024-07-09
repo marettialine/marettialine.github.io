@@ -54,6 +54,21 @@ export const HeaderContainer = styled.header`
       /*&.active {
         color: ${(props) => props.theme['green-100']};
       }*/
+
+      &.cv {
+        color: ${(props) => props.theme['gray-100']};
+        background-color: ${(props) => props.theme['green-100']};
+        padding: 0.5rem 1rem;
+
+        border: 1px solid ${(props) => props.theme['green-100']};
+        border-radius: 8px;
+
+        transition: all 0.1s;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
     }
   }
 `
