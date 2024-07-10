@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Container } from '../../layouts/DefaultLayout/styles'
 
-export const ProgrammingLanguagesContainer = styled.div`
+export const ProgrammingLanguagesContainer = styled(Container)`
   ul {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
