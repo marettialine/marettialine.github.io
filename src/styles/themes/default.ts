@@ -15,6 +15,8 @@ export const defaultTheme = {
   'green-300': '#00B37E',
   'green-500': '#00875F',
   'green-700': '#015F43',
+  'green-gradient':
+    '-webkit-linear-gradient(90deg, rgba(104,161,110,1) 0%, rgba(0,135,95,1) 50%, rgba(1,95,67,1) 100%)',
 
   'red-500': '#AB222E',
   'red-700': '#7A1921',

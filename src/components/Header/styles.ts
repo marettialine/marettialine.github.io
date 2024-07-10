@@ -5,13 +5,13 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  width: calc(100% - 4rem);
+  width: calc(100% + 2rem);
 
-  position: fixed;
+  margin-left: -1rem;
+
+  position: sticky;
   top: 1rem;
-  left: 2rem;
-
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 
   background: ${(props) => props.theme['gray-850']};
 
