@@ -419,8 +419,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 100%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     gap: 1rem;
+    row-gap: 2rem;
 
     .item {
       background-color: ${e=>e.theme["gray-850"]};
