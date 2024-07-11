@@ -4,14 +4,19 @@ export const HeaderContainer = styled.header`
   width: 100%;
   max-width: 74rem;
 
+  position: -webkit-sticky;
   position: sticky;
   top: 1rem;
-  padding: 0.5rem 1rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+
+  z-index: 99999;
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0.5rem 1rem;
 
     width: calc(100% + 2rem);
 
