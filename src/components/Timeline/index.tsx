@@ -1,4 +1,5 @@
 import { TimelineContainer } from './styles'
+
 import { Student, Code, Translate } from 'phosphor-react'
 
 export function Timeline() {
