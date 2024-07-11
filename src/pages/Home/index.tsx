@@ -6,11 +6,12 @@ import { Socials } from '../../components/Socials'
 import { ProgrammingLanguages } from '../../components/ProgrammingLanguages'
 
 import { Mark } from '../../styles/tags'
-import { AboutMeContainer, HomeContainer } from './styles'
+import { AboutMeContainer, HomeContainer, TrainingContainer } from './styles'
 import { Container } from '../../layouts/DefaultLayout/styles'
 
 import girlCoding from '../../assets/girl_coding.svg'
 import portfolioOwner from '../../assets/portfolio_owner.png'
+import { Timeline } from '../../components/Timeline'
 
 export function Home() {
   const ageCalculation = new Date().getFullYear() - 2002
@@ -150,7 +151,17 @@ export function Home() {
           </div>
         </Container>
       </AboutMeContainer>
-      <ProgrammingLanguages />
+      <TrainingContainer>
+        <Container>
+          <h2>
+            Minha <Mark>Formação Acadêmica</Mark>
+          </h2>
+          <Timeline />
+        </Container>
+      </TrainingContainer>
+      <Container>
+        <ProgrammingLanguages />
+      </Container>
     </>
   )
 }

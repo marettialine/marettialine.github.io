@@ -110,3 +110,17 @@ export const AboutMeContainer = styled.div`
     }
   }
 `
+
+export const TrainingContainer = styled.div`
+  margin-top: -2rem;
+
+  z-index: 0;
+  position: relative;
+
+  background-color: ${(props) => props.theme.black};
+  padding: 4rem 0;
+
+  h2 {
+    text-align: center;
+  }
+`
