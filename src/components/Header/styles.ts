@@ -1,72 +1,77 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: calc(100% + 2rem);
-
-  margin-left: -1rem;
+  width: 100%;
+  max-width: 74rem;
 
   position: sticky;
   top: 1rem;
   padding: 0.5rem 1rem;
 
-  background: ${(props) => props.theme['gray-850']};
-
-  border-radius: 8px;
-
-  img {
-    width: 10rem;
-  }
-
-  span {
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 1rem;
-  }
-
-  nav {
+  .container {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.3rem;
+    width: calc(100% + 2rem);
 
-      color: ${(props) => props.theme['gray-100']};
+    margin-left: -1rem;
 
-      border-top: 3px solid transparent;
-      border-bottom: 3px solid transparent;
+    background: ${(props) => props.theme['gray-850']};
 
-      text-decoration: none;
+    border-radius: 8px;
+
+    img {
+      width: 10rem;
+    }
+
+    span {
+      font-family: 'Share Tech Mono', monospace;
       text-transform: uppercase;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 1rem;
+    }
 
-      &:hover {
-        border-bottom: 3px solid ${(props) => props.theme['green-100']};
-      }
+    nav {
+      display: flex;
+      gap: 1.5rem;
 
-      /*&.active {
-        color: ${(props) => props.theme['green-100']};
-      }*/
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
 
-      &.cv {
         color: ${(props) => props.theme['gray-100']};
-        background-color: ${(props) => props.theme['green-100']};
-        padding: 0.5rem 1rem;
 
-        border: 1px solid ${(props) => props.theme['green-100']};
-        border-radius: 8px;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
 
-        transition: all 0.1s;
+        text-decoration: none;
+        text-transform: uppercase;
 
         &:hover {
-          background-color: transparent;
+          border-bottom: 3px solid ${(props) => props.theme['green-100']};
+        }
+
+        /*&.active {
+      color: ${(props) => props.theme['green-100']};
+    }*/
+
+        &.cv {
+          color: ${(props) => props.theme['gray-100']};
+          background-color: ${(props) => props.theme['green-100']};
+          padding: 0.5rem 1rem;
+
+          border: 1px solid ${(props) => props.theme['green-100']};
+          border-radius: 8px;
+
+          transition: all 0.1s;
+
+          &:hover {
+            background-color: transparent;
+          }
         }
       }
     }
