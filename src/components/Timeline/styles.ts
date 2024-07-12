@@ -26,7 +26,7 @@ export const TimelineContainer = styled.div`
         padding-right: 2.5rem;
 
         .icon {
-          right: -1.25rem;
+          right: -1.4rem;
         }
       }
     }
@@ -38,7 +38,7 @@ export const TimelineContainer = styled.div`
         padding-left: 2.5rem;
 
         .icon {
-          left: -1.25rem;
+          left: -1.4rem;
         }
       }
     }
