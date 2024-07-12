@@ -18,7 +18,7 @@ export function Header() {
             to="home"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-200}
             duration={500}
             title="Início"
           >
@@ -46,7 +46,7 @@ export function Header() {
           >
             Formação
           </Link>
-          <Link
+          {/* <Link
             activeClass="active"
             to="experience"
             spy={true}
@@ -56,18 +56,7 @@ export function Header() {
             title="Experiências"
           >
             Experiências
-          </Link>
-          <Link
-            activeClass="active"
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            title="Habilidades"
-          >
-            Habilidades
-          </Link>
+          </Link> */}
           <Link
             activeClass="active"
             to="projects"
@@ -81,6 +70,17 @@ export function Header() {
           </Link>
           <Link
             activeClass="active"
+            to="skills"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            title="Habilidades"
+          >
+            Habilidades
+          </Link>
+          {/* <Link
+            activeClass="active"
             to="contact"
             spy={true}
             smooth={true}
@@ -89,7 +89,7 @@ export function Header() {
             title="Contato"
           >
             Contato
-          </Link>
+          </Link> */}
           <a
             href="https://marettialine.github.io/CV.pdf"
             title="Currículo"

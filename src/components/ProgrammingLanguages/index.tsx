@@ -1,5 +1,6 @@
 import { ProgrammingLanguagesContainer } from './styles'
 
+import htmlIcon from '../../assets/icon_html.png'
 import reactIcon from '../../assets/icon_react.png'
 import javascriptIcon from '../../assets/icon_javascript.png'
 import typescriptIcon from '../../assets/icon_typescript.png'
@@ -17,10 +18,12 @@ import { HorizontalScroll } from '../../styles/animations'
 export function ProgrammingLanguages() {
   return (
     <ProgrammingLanguagesContainer>
-      <h2>Technologies</h2>
-
       <ul>
         <HorizontalScroll>
+          <li>
+            <img src={htmlIcon} alt="" />
+            HTML
+          </li>
           <li>
             <img src={reactIcon} alt="" />
             React

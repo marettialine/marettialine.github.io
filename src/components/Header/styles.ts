@@ -56,7 +56,8 @@ export const HeaderContainer = styled.header`
         text-decoration: none;
         text-transform: uppercase;
 
-        &:hover {
+        &:hover,
+        &.active {
           border-bottom: 3px solid ${(props) => props.theme['green-100']};
         }
 

@@ -9,4 +9,9 @@ export const Mark = styled.span`
     color: ${(props) => props.theme.white};
     text-transform: uppercase;
   }
+
+  .gray & {
+    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme['gray-850']};
+  }
 `
