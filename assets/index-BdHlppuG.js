@@ -253,11 +253,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,i1="/assets/icon_html-Dg4-VSJU.png",Rn="/assets/icon_react-B0RcWxPQ.png",o1="/assets/icon_javascript-Lj38cWD5.png",In="/assets/icon_typescript-S3I9RVUH.png",zn="/assets/icon_styled_components-fZYKunwU.png",wk="/assets/icon_tailwind-CLJ71Gik.png",l1="/assets/icon_php-CgsERsUq.png",ws="/assets/icon_node-BSsnsgSY.png",Ek="/assets/icon_python-DM9a_10p.png",xk="/assets/icon_java-oaxB_xUp.png",Sk="/assets/icon_figma-R-OQ5Se5.png",Ck=Oe.div`
   @keyframes scrollInfinito {
     to {
-      translate: calc(-30%);
+      translate: calc(-43%);
     }
   }
 
-  animation: scrollInfinito 10s linear infinite;
+  animation: scrollInfinito 12s linear infinite;
 
   display: flex;
   justify-content: space-around;
