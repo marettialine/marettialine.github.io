@@ -1,27 +1,79 @@
 import { Element } from 'react-scroll'
+import { ChangeEvent, FormEvent, useContext, useState } from 'react'
+import emailjs from '@emailjs/browser'
+
+import { throwToast } from '../../utils/Toast'
+import { LanguageContext } from '../../contexts/LanguageContext'
 
 import contactGirlPhone from '../../assets/girl_phone.png'
 
 import { Container } from '../../layouts/DefaultLayout/styles'
 import { Mark } from '../../styles/tags'
+import { ContactContainer } from './styles'
 
 import { WhatsappLogo } from 'phosphor-react'
 import { BsEnvelope } from 'react-icons/bs'
 import { IoIosSend } from 'react-icons/io'
-import { ContactContainer } from './styles'
-import { LanguageContext } from '../../contexts/LanguageContext'
-import { FormEvent, useContext } from 'react'
-import { throwToast } from '../../utils/Toast'
 
 export function Contact() {
   const pageText = useContext(LanguageContext).pageText.Contact
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+
   function handleOnSubmit(e: FormEvent) {
     e.preventDefault()
 
-    throwToast.info(
-      'O envio de uma mensagem ainda está sendo desenvolvido, por favor utilize o e-mail ou telefone para entrar em contato!',
-    )
+    if (name === '' && email === '' && subject === '' && message === '') {
+      console.log('entrou')
+    } else {
+      const params = {
+        name,
+        email,
+        subject,
+        message,
+      }
+
+      emailjs
+        .send(
+          'service_45e0zko',
+          'template_jeydjwe',
+          params,
+          'qKfKdyvMKoCuE5aZG',
+        )
+        .then(
+          () => {
+            throwToast.success(
+              'Sua mensagem foi enviada com sucesso! Aguarde um e-mail de retorno.',
+            )
+          },
+          (error) => {
+            throwToast.error(
+              'Ocorreu algum erro ao enviar o seu e-mail. Por favor, tente novamente!',
+            )
+
+            console.log('Ocorreu um erro ao enviar o email: ', error)
+          },
+        )
+    }
+  }
+
+  function handleOnChangeName(e: ChangeEvent<HTMLInputElement>) {
+    setName(e.target.value)
+  }
+
+  function handleOnChangeEmail(e: ChangeEvent<HTMLInputElement>) {
+    setEmail(e.target.value)
+  }
+
+  function handleOnChangeSubject(e: ChangeEvent<HTMLInputElement>) {
+    setSubject(e.target.value)
+  }
+
+  function handleOnChangeMessage(e: ChangeEvent<HTMLTextAreaElement>) {
+    setMessage(e.target.value)
   }
 
   return (
@@ -61,10 +113,33 @@ export function Contact() {
             </div>
             <form onSubmit={handleOnSubmit}>
               <h3>{pageText.form.title}</h3>
-              <input type="text" placeholder={pageText.form.name} />
-              <input type="text" placeholder="E-mail" />
-              <input type="text" placeholder={pageText.form.subject} />
-              <textarea placeholder={pageText.form.message}></textarea>
+              <input
+                type="text"
+                placeholder={pageText.form.name}
+                value={name}
+                onChange={handleOnChangeName}
+                required
+              />
+              <input
+                type="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={handleOnChangeEmail}
+                required
+              />
+              <input
+                type="text"
+                placeholder={pageText.form.subject}
+                value={subject}
+                onChange={handleOnChangeSubject}
+                required
+              />
+              <textarea
+                placeholder={pageText.form.message}
+                value={message}
+                onChange={handleOnChangeMessage}
+                required
+              ></textarea>
               <button>
                 <IoIosSend size={20} /> Enviar
               </button>
