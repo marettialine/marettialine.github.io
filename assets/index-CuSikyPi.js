@@ -791,6 +791,17 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     @media screen and (max-width: 915px) {
       flex-direction: column;
     }
+
+    @media screen and (max-width: 500px) {
+      h1 {
+        background-color: red;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
   }
 `,w8=ue.div`
   footer {
