@@ -29,6 +29,15 @@ export const HomeContainer = styled(Container)`
     @media screen and (max-width: 915px) {
       flex-direction: column;
     }
+
+    @media screen and (max-width: 500px) {
+      h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
   }
 `
 

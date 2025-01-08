@@ -20,7 +20,7 @@ export function Contact() {
     e.preventDefault()
 
     throwToast.info(
-      'O envio de e-mail ainda está sendo desenvolvido, por favor use o e-mail ao lado para entrar em contato',
+      'O envio de uma mensagem ainda está sendo desenvolvido, por favor utilize o e-mail ou telefone para entrar em contato!',
     )
   }
 

@@ -109,13 +109,22 @@ export const HeaderContainer = styled.header`
       }
     }
 
-    .mobile {
+    .mobile,
+    .small-mobile {
       display: none;
     }
 
     @media screen and (max-width: 1050px) {
       .mobile {
         display: flex;
+      }
+
+      .small-mobile {
+        display: flex;
+      }
+
+      .medium-mobile {
+        display: none;
       }
 
       nav {

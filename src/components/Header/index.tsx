@@ -50,6 +50,15 @@ export function Header() {
         </span>
 
         <p>
+          <select
+            value={language}
+            onChange={handleOnChange}
+            className="small-mobile"
+          >
+            <option value={'pt-BR'}>pt-BR</option>
+            <option value={'en'}>en-US</option>
+          </select>
+
           <a
             href={
               language === 'pt-BR'
@@ -153,7 +162,11 @@ export function Header() {
           >
             <FilePdf size={20} weight="fill" /> {pageText.Header[6]}
           </a>
-          <select value={language} onChange={handleOnChange}>
+          <select
+            value={language}
+            onChange={handleOnChange}
+            className="medium-mobile"
+          >
             <option value={'pt-BR'}>pt-BR</option>
             <option value={'en'}>en-US</option>
           </select>
