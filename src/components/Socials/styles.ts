@@ -33,4 +33,14 @@ export const SocialsContainer = styled.div`
       border: 1px solid ${(props) => props.theme['green-100']};
     }
   }
+
+  &.footer {
+    padding: 0 1rem;
+    justify-content: flex-end;
+
+    a {
+      width: 35px;
+      height: 35px;
+    }
+  }
 `

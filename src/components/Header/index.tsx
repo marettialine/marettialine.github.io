@@ -1,11 +1,29 @@
 import { Link } from 'react-scroll'
+import { ChangeEvent, useContext } from 'react'
 
 import { HeaderContainer } from './styles'
 
 import logo from '../../../public/logo.svg'
+
 import { FilePdf } from 'phosphor-react'
+import { LanguageContext } from '../../contexts/LanguageContext'
+import { ptBR } from '../../language/pt-BR/pt-BR'
+import { enUS } from '../../language/en-US/en-US'
 
 export function Header() {
+  const { language, setLanguage, setPageText, pageText } =
+    useContext(LanguageContext)
+
+  function handleOnChange(e: ChangeEvent<HTMLSelectElement>) {
+    const { value } = e.target
+
+    setLanguage(value)
+
+    localStorage.setItem('language@1.0', value)
+
+    setPageText(value === 'pt-BR' ? ptBR : enUS)
+  }
+
   return (
     <HeaderContainer>
       <div className="container">
@@ -18,11 +36,11 @@ export function Header() {
             to="home"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-200}
             duration={500}
-            title="Início"
+            title={pageText.Header[0]}
           >
-            Início
+            {pageText.Header[0]}
           </Link>
           <Link
             activeClass="active"
@@ -31,74 +49,68 @@ export function Header() {
             smooth={true}
             offset={-70}
             duration={500}
-            title="Sobre mim"
+            title={pageText.Header[1]}
           >
-            Sobre mim
+            {pageText.Header[1]}
           </Link>
           <Link
             activeClass="active"
             to="training"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-30}
             duration={500}
-            title="Formação"
+            title={pageText.Header[2]}
           >
-            Formação
-          </Link>
-          <Link
-            activeClass="active"
-            to="experience"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            title="Experiências"
-          >
-            Experiências
-          </Link>
-          <Link
-            activeClass="active"
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            title="Habilidades"
-          >
-            Habilidades
+            {pageText.Header[2]}
           </Link>
           <Link
             activeClass="active"
             to="projects"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-30}
             duration={500}
-            title="Projetos"
+            title={pageText.Header[3]}
           >
-            Projetos
+            {pageText.Header[3]}
           </Link>
+          <Link
+            activeClass="active"
+            to="technologies"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={500}
+            title={pageText.Header[4]}
+          >
+            {pageText.Header[4]}
+          </Link>
+
           <Link
             activeClass="active"
             to="contact"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-15}
             duration={500}
-            title="Contato"
+            title={pageText.Header[5]}
           >
-            Contato
+            {pageText.Header[5]}
           </Link>
           <a
-            href="https://marettialine.github.io/CV.pdf"
+            href="https://marettialine.github.io/CV_ptBR.pdf"
             title="Currículo"
             className="cv"
             target="_blank"
             rel="noreferrer"
           >
-            <FilePdf size={20} weight="fill" /> Currículo
+            <FilePdf size={20} weight="fill" /> {pageText.Header[6]}
           </a>
+          <select value={language} onChange={handleOnChange}>
+            <option value={'pt-BR'}>pt-BR</option>
+            <option value={'en'}>en-US</option>
+          </select>
         </nav>
       </div>
     </HeaderContainer>

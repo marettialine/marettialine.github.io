@@ -1,5 +1,13 @@
 import styled from 'styled-components'
 
+export const TechnologiesContainer = styled.div`
+  padding: 4rem 0;
+
+  h2 {
+    text-align: left;
+  }
+`
+
 export const ProgrammingLanguagesContainer = styled.div`
   ul {
     background-color: rgba(0, 0, 0, 0.3);
@@ -9,6 +17,10 @@ export const ProgrammingLanguagesContainer = styled.div`
     margin-top: 2rem;
 
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     li {
       flex: 1;

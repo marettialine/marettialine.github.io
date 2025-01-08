@@ -56,13 +56,14 @@ export const HeaderContainer = styled.header`
         text-decoration: none;
         text-transform: uppercase;
 
-        &:hover {
+        &:hover,
+        &.active {
           border-bottom: 3px solid ${(props) => props.theme['green-100']};
         }
 
         /*&.active {
-      color: ${(props) => props.theme['green-100']};
-    }*/
+          color: ${(props) => props.theme['green-100']};
+        }*/
 
         &.cv {
           color: ${(props) => props.theme['gray-100']};
@@ -78,6 +79,21 @@ export const HeaderContainer = styled.header`
             background-color: transparent;
           }
         }
+      }
+    }
+
+    select {
+      padding: 0 0.5rem;
+
+      background-color: transparent;
+
+      color: ${(props) => props.theme.white};
+
+      border: 0;
+      border-radius: 4px;
+
+      option {
+        background-color: ${(props) => props.theme['gray-850']};
       }
     }
   }

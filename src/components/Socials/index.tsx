@@ -5,37 +5,42 @@ import { SocialsContainer } from './styles'
 
 interface SocialsProps {
   vertical?: boolean
+  footer?: boolean
 }
 
-export function Socials({ vertical = false }: SocialsProps) {
+export function Socials({ vertical = false, footer = false }: SocialsProps) {
+  const iconSize = footer ? 23 : 28
+
   return (
-    <SocialsContainer className={vertical ? 'vertical' : ''}>
+    <SocialsContainer
+      className={vertical ? 'vertical' : footer ? 'footer' : ''}
+    >
       <a
         href="https://www.instagram.com/marettialine/"
         target="_blank"
         rel="noreferrer"
       >
-        <InstagramLogo size={28} />
+        <InstagramLogo size={iconSize} />
       </a>
       <a
         href="https://www.linkedin.com/in/marettialine/"
         target="_blank"
         rel="noreferrer"
       >
-        <LinkedinLogo size={28} />
+        <LinkedinLogo size={iconSize} />
       </a>
       {/* <a href="" target="_blank">
-        <FacebookLogo size={28} />
+        <FacebookLogo size={iconSize} />
       </a> */}
       <a href="https://t.me/marettialine" target="_blank" rel="noreferrer">
-        <TelegramLogo size={28} />
+        <TelegramLogo size={iconSize} />
       </a>
       <a
         href="https://github.com/marettialine/"
         target="_blank"
         rel="noreferrer"
       >
-        <FaGithub size={28} />
+        <FaGithub size={iconSize} />
       </a>
     </SocialsContainer>
   )

@@ -1,5 +1,24 @@
 import styled from 'styled-components'
 
+export const EducationContainer = styled.div`
+  margin-top: -2rem;
+
+  z-index: 0;
+  position: relative;
+
+  background-color: ${(props) => props.theme.black};
+  padding: 4rem 0;
+  padding-bottom: 2rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+`
+
 export const TimelineContainer = styled.div`
   margin-top: 2rem;
 
@@ -26,7 +45,7 @@ export const TimelineContainer = styled.div`
         padding-right: 2.5rem;
 
         .icon {
-          right: -1.25rem;
+          right: -1.4rem;
         }
       }
     }
@@ -38,7 +57,7 @@ export const TimelineContainer = styled.div`
         padding-left: 2.5rem;
 
         .icon {
-          left: -1.25rem;
+          left: -1.4rem;
         }
       }
     }

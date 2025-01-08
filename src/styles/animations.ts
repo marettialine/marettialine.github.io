@@ -7,7 +7,7 @@ export const HorizontalScroll = styled.div`
     }
   }
 
-  animation: scrollInfinito 10s linear infinite;
+  animation: scrollInfinito 12s linear infinite;
 
   display: flex;
   justify-content: space-around;
