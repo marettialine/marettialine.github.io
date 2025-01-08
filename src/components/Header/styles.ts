@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   width: 100%;
   max-width: 74rem;
 
@@ -26,6 +35,8 @@ export const HeaderContainer = styled.header`
 
     border-radius: 8px;
 
+    position: relative;
+
     img {
       width: 10rem;
     }
@@ -38,46 +49,47 @@ export const HeaderContainer = styled.header`
       font-size: 1rem;
     }
 
-    nav {
+    nav,
+    p {
       display: flex;
       gap: 1.5rem;
+    }
 
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.3rem;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3rem;
 
-        color: ${(props) => props.theme['gray-100']};
+      color: ${(props) => props.theme['gray-100']};
 
-        border-top: 3px solid transparent;
-        border-bottom: 3px solid transparent;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
 
-        text-decoration: none;
-        text-transform: uppercase;
+      text-decoration: none;
+      text-transform: uppercase;
 
-        &:hover,
-        &.active {
-          border-bottom: 3px solid ${(props) => props.theme['green-100']};
-        }
+      &:hover,
+      &.active {
+        border-bottom: 3px solid ${(props) => props.theme['green-100']};
+      }
 
-        /*&.active {
+      /*&.active {
           color: ${(props) => props.theme['green-100']};
         }*/
 
-        &.cv {
-          color: ${(props) => props.theme['gray-100']};
-          background-color: ${(props) => props.theme['green-100']};
-          padding: 0.5rem 1rem;
+      &.cv {
+        color: ${(props) => props.theme['gray-100']};
+        background-color: ${(props) => props.theme['green-100']};
+        padding: 0.5rem 1rem;
 
-          border: 1px solid ${(props) => props.theme['green-100']};
-          border-radius: 8px;
+        border: 1px solid ${(props) => props.theme['green-100']};
+        border-radius: 8px;
 
-          transition: all 0.1s;
+        transition: all 0.1s;
 
-          &:hover {
-            background-color: transparent;
-          }
+        &:hover {
+          background-color: transparent;
         }
       }
     }
@@ -87,13 +99,92 @@ export const HeaderContainer = styled.header`
 
       background-color: transparent;
 
-      color: ${(props) => props.theme.white};
+      color: ${(props) => props.theme['gray-100']};
 
       border: 0;
       border-radius: 4px;
 
       option {
         background-color: ${(props) => props.theme['gray-850']};
+      }
+    }
+
+    .mobile {
+      display: none;
+    }
+
+    @media screen and (max-width: 1050px) {
+      .mobile {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu-btn {
+        background-color: transparent;
+
+        color: ${(props) => props.theme['gray-100']};
+
+        border: 0;
+        border-radius: 8px;
+      }
+
+      .visible {
+        width: 15rem;
+
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        top: 4rem;
+        right: 0rem;
+
+        background-color: ${(props) => props.theme['gray-850']};
+
+        border: 1px solid ${(props) => props.theme['green-100']};
+        border-radius: 8px;
+
+        padding: 0.5rem 1rem;
+
+        animation: fadeIn 0.3s ease-in forwards;
+
+        a,
+        select {
+          padding: 1rem 0.5rem;
+          width: 100%;
+
+          text-align: center;
+        }
+
+        .cv {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .mobile.cv {
+        display: none;
+      }
+
+      .visible {
+        .cv {
+          display: flex;
+
+          width: 100%;
+
+          order: 2;
+
+          margin-top: 1rem;
+        }
+
+        select {
+          order: 1;
+        }
       }
     }
   }

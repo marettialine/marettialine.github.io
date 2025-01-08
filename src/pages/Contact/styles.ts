@@ -138,5 +138,48 @@ export const ContactContainer = styled.div`
         color: ${(props) => props.theme.white};
       }
     }
+
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+
+      .text {
+        order: 2;
+
+        .links {
+          justify-content: space-evenly;
+        }
+      }
+
+      form {
+        order: 1;
+
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 470px) {
+      .text {
+        .links {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 1.5rem;
+
+          margin-bottom: 2rem;
+
+          a:last-child {
+            align-self: flex-end;
+            p {
+              order: 2;
+            }
+            span {
+              order: 1;
+            }
+          }
+        }
+      }
+    }
   }
 `

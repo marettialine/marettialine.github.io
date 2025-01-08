@@ -16,10 +16,6 @@ export const ProjectsContainer = styled.div`
   border-radius: 17px;
 
   .container {
-    margin: 0 auto;
-    padding: 0;
-    padding-top: 2rem;
-
     z-index: 1;
 
     h2 {
@@ -58,6 +54,7 @@ export const ProjectsContainer = styled.div`
         border: 1px solid ${(props) => props.theme['gray-900']};
 
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap: 1rem;
 
@@ -80,7 +77,7 @@ export const ProjectsContainer = styled.div`
         }
 
         img {
-          width: 40%;
+          width: 27rem;
         }
 
         p {
@@ -116,6 +113,33 @@ export const ProjectsContainer = styled.div`
         &:hover {
           transform: scale(1.02);
           border: 1px solid ${(props) => props.theme.white};
+        }
+
+        @media screen and (max-width: 980px) {
+          flex-direction: column;
+
+          width: 70%;
+
+          margin: 0 auto;
+
+          padding: 2rem;
+
+          &:nth-child(even) .text {
+            order: 2;
+          }
+
+          &:nth-child(even) img {
+            order: 1;
+          }
+        }
+
+        @media screen and (max-width: 680px) {
+          width: 100%;
+
+          img {
+            width: 100%;
+            margin: 0 auto;
+          }
         }
       }
     }

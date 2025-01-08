@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
 
-    body, input, textarea, button{
+    body, input, textarea, button, select{
         font-family: "Share Tech", sans-serif;
         font-weight: 400;
         font-style: normal;

@@ -94,6 +94,14 @@ export const EducationContainer = styled.div`
         align-items: center;
         justify-content: center;
       }
+
+      @media screen and (max-width: 600px) {
+        height: 9rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        height: 12rem;
+      }
     }
   }
 `

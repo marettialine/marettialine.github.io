@@ -25,6 +25,10 @@ export const HomeContainer = styled(Container)`
     img {
       width: 20rem;
     }
+
+    @media screen and (max-width: 915px) {
+      flex-direction: column;
+    }
   }
 `
 
@@ -33,5 +37,11 @@ export const FooterContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
   }
 `

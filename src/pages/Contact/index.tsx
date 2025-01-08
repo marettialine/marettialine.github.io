@@ -44,7 +44,7 @@ export function Contact() {
                   <p className="icon">
                     <WhatsappLogo size={30} />
                   </p>
-                  +55 (35) 98712-1329
+                  <span>+55 (35) 98712-1329</span>
                 </a>
                 <a
                   href="mailto:alinesmaretti@gmail.com"
@@ -54,7 +54,7 @@ export function Contact() {
                   <p className="icon">
                     <BsEnvelope size={30} />
                   </p>
-                  alinesmaretti@gmail.com
+                  <span>alinesmaretti@gmail.com</span>
                 </a>
               </div>
               <img src={contactGirlPhone} alt="" />

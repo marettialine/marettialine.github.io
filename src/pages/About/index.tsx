@@ -76,7 +76,7 @@ export function About() {
                       />
                     )}
                   </span>
-                  {pageText.numbers[0]}
+                  <span>{pageText.numbers[0]}</span>
                 </p>
                 <p>
                   <span>
@@ -90,7 +90,7 @@ export function About() {
                       />
                     )}
                   </span>
-                  {pageText.numbers[1]}
+                  <span>{pageText.numbers[1]}</span>
                 </p>
                 <p>
                   <span>
@@ -104,7 +104,7 @@ export function About() {
                       />
                     )}
                   </span>
-                  {pageText.numbers[2]}
+                  <span>{pageText.numbers[2]}</span>
                 </p>
               </div>
             </div>

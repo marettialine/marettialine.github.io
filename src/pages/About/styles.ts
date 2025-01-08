@@ -16,7 +16,7 @@ export const AboutContainer = styled.div`
     margin-top: 3rem;
 
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-around;
     gap: 5rem;
 
@@ -43,6 +43,8 @@ export const AboutContainer = styled.div`
         gap: 1.5rem;
         justify-content: space-between;
 
+        margin-top: 2rem;
+
         p {
           flex: 1;
           display: flex;
@@ -64,7 +66,7 @@ export const AboutContainer = styled.div`
 
           transition: all 0.1s;
 
-          span {
+          span:first-child {
             font-size: 3rem;
             display: block;
             text-align: center;
@@ -83,6 +85,44 @@ export const AboutContainer = styled.div`
 
     img {
       width: 17rem;
+    }
+
+    @media screen and (max-width: 915px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      .numbers {
+        flex-direction: column;
+
+        p {
+          width: 70%;
+          margin: 0 auto;
+
+          span:first-child {
+            margin-top: 0.5rem;
+          }
+
+          span:nth-child(2) {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 350px) {
+      gap: 2rem;
+
+      .numbers {
+        p {
+          width: 100%;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
     }
   }
 `
