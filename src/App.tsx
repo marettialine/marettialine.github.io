@@ -6,8 +6,9 @@ import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 import { LanguageContext, PageTextType } from './contexts/LanguageContext'
 import { useState } from 'react'
-import { ptBR } from './language/pt-BR/pt-BR'
-import { enUS } from './language/en-US/en-US'
+import { ptBR } from './language/pt-BR'
+import { enUS } from './language/en-US'
+import { Toast } from './components/Toast'
 
 export function App() {
   const [language, setLanguage] = useState(
@@ -27,6 +28,8 @@ export function App() {
           <Router />
         </LanguageContext.Provider>
       </BrowserRouter>
+
+      <Toast />
 
       <GlobalStyle />
     </ThemeProvider>

@@ -1,11 +1,17 @@
 import styled from 'styled-components'
 
+import background from '../../assets/projects_background.png'
+
 export const ContactContainer = styled.div`
   padding: 2rem 0;
 
   border-radius: 17px;
 
   background-color: ${(props) => props.theme.white};
+
+  background-image: url(${background});
+  background-position: center;
+  background-size: contain;
 
   color: ${(props) => props.theme.black};
 
@@ -17,8 +23,8 @@ export const ContactContainer = styled.div`
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    gap: 7rem;
 
     padding: 1rem 0;
 
@@ -26,35 +32,55 @@ export const ContactContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: space-around;
       gap: 1rem;
 
       flex: 1;
 
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      .icon {
-        background-color: ${(props) => props.theme['green-100']};
-
-        width: 50px;
-        height: 50px;
+      .links {
+        width: 100%;
 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
-        color: ${(props) => props.theme.white};
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
 
-        border-radius: 17px;
+          color: ${(props) => props.theme.black};
+
+          text-decoration: none;
+
+          transition: all 0.3s;
+
+          &:hover {
+            color: ${(props) => props.theme['green-100']};
+
+            font-size: 1.1rem;
+          }
+        }
+
+        .icon {
+          background-color: ${(props) => props.theme['green-100']};
+
+          width: 50px;
+          height: 50px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: ${(props) => props.theme.white};
+
+          border-radius: 17px;
+        }
       }
 
       img {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
       }
     }

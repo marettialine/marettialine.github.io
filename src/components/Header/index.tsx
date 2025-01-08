@@ -7,8 +7,8 @@ import logo from '../../../public/logo.svg'
 
 import { FilePdf } from 'phosphor-react'
 import { LanguageContext } from '../../contexts/LanguageContext'
-import { ptBR } from '../../language/pt-BR/pt-BR'
-import { enUS } from '../../language/en-US/en-US'
+import { ptBR } from '../../language/pt-BR'
+import { enUS } from '../../language/en-US'
 
 export function Header() {
   const { language, setLanguage, setPageText, pageText } =
@@ -55,7 +55,7 @@ export function Header() {
           </Link>
           <Link
             activeClass="active"
-            to="training"
+            to="qualifications"
             spy={true}
             smooth={true}
             offset={-30}
@@ -99,7 +99,11 @@ export function Header() {
             {pageText.Header[5]}
           </Link>
           <a
-            href="https://marettialine.github.io/CV_ptBR.pdf"
+            href={
+              language === 'pt-BR'
+                ? 'https://marettialine.github.io/CV_ptBR.pdf'
+                : 'https://marettialine.github.io/CV_en.pdf'
+            }
             title="Currículo"
             className="cv"
             target="_blank"

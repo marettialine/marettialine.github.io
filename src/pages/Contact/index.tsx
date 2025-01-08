@@ -1,6 +1,6 @@
 import { Element } from 'react-scroll'
 
-import contactGirlPhone from '../../assets/girl_phone.jpg'
+import contactGirlPhone from '../../assets/girl_phone.png'
 
 import { Container } from '../../layouts/DefaultLayout/styles'
 import { Mark } from '../../styles/tags'
@@ -10,10 +10,19 @@ import { BsEnvelope } from 'react-icons/bs'
 import { IoIosSend } from 'react-icons/io'
 import { ContactContainer } from './styles'
 import { LanguageContext } from '../../contexts/LanguageContext'
-import { useContext } from 'react'
+import { FormEvent, useContext } from 'react'
+import { throwToast } from '../../utils/Toast'
 
 export function Contact() {
   const pageText = useContext(LanguageContext).pageText.Contact
+
+  function handleOnSubmit(e: FormEvent) {
+    e.preventDefault()
+
+    throwToast.info(
+      'O envio de e-mail ainda está sendo desenvolvido, por favor use o e-mail ao lado para entrar em contato',
+    )
+  }
 
   return (
     <Element name="contact">
@@ -26,21 +35,31 @@ export function Contact() {
           </h2>
           <div className="container">
             <div className="text">
-              <a>
-                <p className="icon">
-                  <WhatsappLogo size={30} />
-                </p>
-                +55 (35) 98712-1329
-              </a>
-              <a>
-                <p className="icon">
-                  <BsEnvelope size={30} />
-                </p>
-                alinesmaretti@gmail.com
-              </a>
+              <div className="links">
+                <a
+                  href="https://wa.me/5535987121329?text=Olá,%20acabei%20de%20ver%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="icon">
+                    <WhatsappLogo size={30} />
+                  </p>
+                  +55 (35) 98712-1329
+                </a>
+                <a
+                  href="mailto:alinesmaretti@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="icon">
+                    <BsEnvelope size={30} />
+                  </p>
+                  alinesmaretti@gmail.com
+                </a>
+              </div>
               <img src={contactGirlPhone} alt="" />
             </div>
-            <form action="">
+            <form onSubmit={handleOnSubmit}>
               <h3>{pageText.form.title}</h3>
               <input type="text" placeholder={pageText.form.name} />
               <input type="text" placeholder="E-mail" />

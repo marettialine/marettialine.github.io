@@ -32,7 +32,7 @@ export function Technologies() {
           </h2>
 
           <ProgrammingLanguagesContainer>
-            <ul>
+            <div className="container">
               <HorizontalScroll>
                 <li>
                   <img src={htmlIcon} alt="" />
@@ -79,7 +79,53 @@ export function Technologies() {
                   Figma
                 </li>
               </HorizontalScroll>
-            </ul>
+              <HorizontalScroll>
+                <li>
+                  <img src={htmlIcon} alt="" />
+                  HTML
+                </li>
+                <li>
+                  <img src={reactIcon} alt="" />
+                  React
+                </li>
+                <li>
+                  <img src={javascriptIcon} alt="" />
+                  Javascript
+                </li>
+                <li>
+                  <img src={typescriptIcon} alt="" />
+                  Typescript
+                </li>
+                <li>
+                  <img src={styledComponentsIcon} alt="" />
+                  Styled Components
+                </li>
+                <li>
+                  <img src={tailwindIcon} alt="" />
+                  Tailwind
+                </li>
+                <li>
+                  <img src={nodeIcon} alt="" />
+                  Node
+                </li>
+                <li>
+                  <img src={phpIcon} alt="" />
+                  PHP
+                </li>
+                <li>
+                  <img src={pythonIcon} alt="" />
+                  Python
+                </li>
+                <li>
+                  <img src={javaIcon} alt="" />
+                  Java
+                </li>
+                <li>
+                  <img src={figmaIcon} alt="" />
+                  Figma
+                </li>
+              </HorizontalScroll>
+            </div>
           </ProgrammingLanguagesContainer>
         </Container>
       </TechnologiesContainer>

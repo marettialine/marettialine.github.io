@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const EducationContainer = styled.div`
+export const WorksContainer = styled.div`
   margin-top: 2rem;
 
   width: 100%;

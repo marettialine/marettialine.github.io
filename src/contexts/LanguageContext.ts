@@ -1,6 +1,14 @@
 import { createContext } from 'react'
-import { ptBR } from '../language/pt-BR/pt-BR'
-import { enUS } from '../language/en-US/en-US'
+import { ptBR } from '../language/pt-BR'
+import { enUS } from '../language/en-US'
+
+interface ProjectType {
+  title: string
+  description: string
+  technologies: JSX.Element[]
+  link: string
+  img: string
+}
 
 export interface PageTextType {
   Header: string[]
@@ -13,14 +21,26 @@ export interface PageTextType {
     description: string[]
     numbers: string[]
   }
-  Education: {
+  Qualifications: {
     title: string[]
-    list: {
+    subtitle: string[]
+    education: {
       english: string[]
       technician: string[]
       engineering: string[]
       rocketseat: string[]
     }
+    works: {
+      ciadi: string[]
+      excelenciaTrainee: string[]
+      excelencia: string[]
+      arteDeCaderno: string[]
+    }
+  }
+  Projects: {
+    title: string[]
+    list: ProjectType[]
+    visit: string
   }
   Technologies: {
     title: string[]

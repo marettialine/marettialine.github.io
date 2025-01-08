@@ -1,15 +1,24 @@
 import styled from 'styled-components'
 
-export const HorizontalScroll = styled.div`
-  @keyframes scrollInfinito {
+export const HorizontalScroll = styled.ul`
+  @keyframes scroll {
+    from {
+      translate: calc(5%);
+    }
     to {
-      translate: calc(-30%);
+      translate: calc(-100%);
     }
   }
 
-  animation: scrollInfinito 12s linear infinite;
+  animation: scroll 15s linear infinite;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 1rem;
+
+  padding: 1rem 0;
+
+  position: relative;
+
+  z-index: 1;
 `

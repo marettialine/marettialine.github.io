@@ -2,7 +2,6 @@ import { ReactTyped } from 'react-typed'
 import { Element } from 'react-scroll'
 
 import { About } from '../About'
-import { Education } from '../Education'
 import { Projects } from '../Projects'
 import { Technologies } from '../Technologies'
 import { Contact } from '../Contact'
@@ -15,6 +14,7 @@ import { FooterContainer, HomeContainer } from './styles'
 import { Container } from '../../layouts/DefaultLayout/styles'
 import { useContext } from 'react'
 import { LanguageContext } from '../../contexts/LanguageContext'
+import { Qualifications } from '../Qualifications'
 
 export function Home() {
   const pageText = useContext(LanguageContext).pageText
@@ -42,7 +42,7 @@ export function Home() {
 
       <About />
 
-      <Education />
+      <Qualifications />
 
       <Projects />
 
