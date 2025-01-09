@@ -13,4 +13,25 @@ export const throwToast = {
   warning: function (txt: string) {
     toast.warn(txt, { className: 'toast-warn' })
   },
+  promise: function <T>(
+    promise: Promise<T>,
+    txtPending: string,
+    txtSuccess: string,
+    txtError: string,
+  ) {
+    return toast.promise(promise, {
+      pending: {
+        render: txtPending,
+        className: 'toast-pending',
+      },
+      success: {
+        render: txtSuccess,
+        className: 'toast-success',
+      },
+      error: {
+        render: txtError,
+        className: 'toast-error',
+      },
+    })
+  },
 }

@@ -1,6 +1,7 @@
 import { Element } from 'react-scroll'
 import { ChangeEvent, FormEvent, useContext, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import { throwToast } from '../../utils/Toast'
 import { LanguageContext } from '../../contexts/LanguageContext'
@@ -14,9 +15,16 @@ import { ContactContainer } from './styles'
 import { WhatsappLogo } from 'phosphor-react'
 import { BsEnvelope } from 'react-icons/bs'
 import { IoIosSend } from 'react-icons/io'
+import { recaptcha } from '../../recaptcha/config'
 
 export function Contact() {
   const pageText = useContext(LanguageContext).pageText.Contact
+
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
+
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value)
+  }
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -26,9 +34,12 @@ export function Contact() {
   function handleOnSubmit(e: FormEvent) {
     e.preventDefault()
 
-    if (name === '' && email === '' && subject === '' && message === '') {
-      console.log('entrou')
-    } else {
+    if (!recaptchaValue) {
+      throwToast.error('Por favor, complete o reCAPTCHA!')
+      return
+    }
+
+    if (name !== '' && email !== '' && subject !== '' && message !== '') {
       const params = {
         name,
         email,
@@ -36,27 +47,34 @@ export function Contact() {
         message,
       }
 
-      emailjs
-        .send(
-          'service_45e0zko',
-          'template_jeydjwe',
-          params,
-          'qKfKdyvMKoCuE5aZG',
-        )
-        .then(
-          () => {
-            throwToast.success(
-              'Sua mensagem foi enviada com sucesso! Aguarde um e-mail de retorno.',
-            )
-          },
-          (error) => {
-            throwToast.error(
-              'Ocorreu algum erro ao enviar o seu e-mail. Por favor, tente novamente!',
-            )
+      const emailPromise = emailjs.send(
+        'service_45e0zko',
+        'template_jeydjwe',
+        params,
+        'qKfKdyvMKoCuE5aZG',
+      )
 
-            console.log('Ocorreu um erro ao enviar o email: ', error)
-          },
-        )
+      throwToast.promise(
+        emailPromise,
+        'Enviando sua mensagem...',
+        'Sua mensagem foi enviada com sucesso! Aguarde um e-mail de retorno.',
+        'Ocorreu um erro ao enviar a sua mensagem. Por favor, tente novamente!',
+      )
+
+      emailPromise
+        .then(() => {
+          setName('')
+          setEmail('')
+          setSubject('')
+          setMessage('')
+        })
+        .catch((error) => {
+          console.error('Erro ao enviar mensagem:', error)
+        })
+    } else {
+      throwToast.error(
+        'Você precisa preencher todos os campos pra enviar sua mensagem!',
+      )
     }
   }
 
@@ -140,6 +158,18 @@ export function Contact() {
                 onChange={handleOnChangeMessage}
                 required
               ></textarea>
+              {name !== '' &&
+                email !== '' &&
+                subject !== '' &&
+                message !== '' && (
+                  <div className="recaptcha">
+                    <ReCAPTCHA
+                      sitekey={recaptcha.site}
+                      onChange={handleRecaptchaChange}
+                    />
+                  </div>
+                )}
+
               <button>
                 <IoIosSend size={20} /> Enviar
               </button>

@@ -137,6 +137,16 @@ export const ContactContainer = styled.div`
 
         color: ${(props) => props.theme.white};
       }
+
+      .recaptcha {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        animation: fadeIn 0.3s ease-in forwards;
+      }
     }
 
     @media screen and (max-width: 980px) {

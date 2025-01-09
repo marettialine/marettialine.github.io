@@ -1,15 +1,6 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   width: 100%;
   max-width: 74rem;
 
