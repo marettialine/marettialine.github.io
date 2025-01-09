@@ -445,7 +445,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
 `,d8=ce.div`
   .container {
-    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
 
     padding: 1rem;
@@ -484,7 +483,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       background: linear-gradient(
         to left,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.8)
+        ${e=>e.theme["gray-850"]}
       );
     }
 
@@ -494,7 +493,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.8)
+        ${e=>e.theme["gray-850"]}
       );
     }
 
@@ -503,18 +502,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     li {
+      background-color: rgba(0, 0, 0, 0.3);
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      width: 7rem;
+
+      padding: 1rem;
+
+      border-radius: 8px;
 
       text-align: center;
 
       list-style: none;
 
       img {
-        width: 100%;
+        width: 8rem;
       }
     }
   }
