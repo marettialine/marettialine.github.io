@@ -10,7 +10,6 @@ export const TechnologiesContainer = styled.div`
 
 export const ProgrammingLanguagesContainer = styled.div`
   .container {
-    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
 
     padding: 1rem;
@@ -49,7 +48,7 @@ export const ProgrammingLanguagesContainer = styled.div`
       background: linear-gradient(
         to left,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.8)
+        ${(props) => props.theme['gray-850']}
       );
     }
 
@@ -59,7 +58,7 @@ export const ProgrammingLanguagesContainer = styled.div`
       background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.8)
+        ${(props) => props.theme['gray-850']}
       );
     }
 
@@ -68,18 +67,23 @@ export const ProgrammingLanguagesContainer = styled.div`
     }
 
     li {
+      background-color: rgba(0, 0, 0, 0.3);
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      width: 7rem;
+
+      padding: 1rem;
+
+      border-radius: 8px;
 
       text-align: center;
 
       list-style: none;
 
       img {
-        width: 100%;
+        width: 8rem;
       }
     }
   }
