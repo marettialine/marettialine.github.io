@@ -62,8 +62,8 @@ export function Header() {
           <a
             href={
               language === 'pt-BR'
-                ? 'https://marettialine.github.io/CV_ptBR.pdf'
-                : 'https://marettialine.github.io/CV_en.pdf'
+                ? 'https://marettialine.github.io/Aline_Goncalves_CV_ptBR.pdf'
+                : 'https://marettialine.github.io/Aline_Goncalves_CV_EN.pdf'
             }
             title="Currículo"
             className="cv mobile"
@@ -152,8 +152,8 @@ export function Header() {
           <a
             href={
               language === 'pt-BR'
-                ? 'https://marettialine.github.io/CV_ptBR.pdf'
-                : 'https://marettialine.github.io/CV_en.pdf'
+                ? 'https://marettialine.github.io/Aline_Goncalves_CV_ptBR.pdf'
+                : 'https://marettialine.github.io/Aline_Goncalves_CV_EN.pdf'
             }
             title="Currículo"
             className="cv"
