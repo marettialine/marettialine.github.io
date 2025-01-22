@@ -8,6 +8,7 @@ interface ProjectType {
   technologies: JSX.Element[]
   link: string
   img: string
+  type: string
 }
 
 export interface PageTextType {

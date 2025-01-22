@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const IconContainer = styled.p`
+export const IconContainer = styled.div`
   border: 1px solid ${(props) => props.theme.white};
   border-radius: 100%;
 
@@ -54,5 +54,18 @@ export const IconContainer = styled.p`
     -webkit-box-shadow: 0px 0px 20px 5px rgba(119, 123, 179, 0.73);
     -moz-box-shadow: 0px 0px 20px 5px rgba(119, 123, 179, 0.73);
     box-shadow: 0px 0px 20px 5px rgba(119, 123, 179, 0.73);
+  }
+
+  &.power-apps {
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(135, 42, 127, 0.73);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(135, 42, 127, 0.73);
+    box-shadow: 0px 0px 20px 5px rgba(135, 42, 127, 0.73);
+  }
+
+  &.icon {
+    img {
+      width: 35px;
+      height: 35px;
+    }
   }
 `

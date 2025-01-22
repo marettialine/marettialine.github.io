@@ -20,7 +20,7 @@ export function Projects() {
           <div className="projects">
             {pageText.list.map((project) => (
               <div className="item" key={project.title}>
-                <img src={project.img} alt="" />
+                <img src={project.img} alt="" className={project.type} />
                 <div className="text">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>

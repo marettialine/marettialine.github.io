@@ -6,6 +6,7 @@ import project3 from '../assets/project_3.png'
 import project4 from '../assets/project_4.png'
 import project5 from '../assets/project_5.png'
 import project6 from '../assets/project_6.png'
+import project7 from '../assets/project_7.png'
 
 const ageCalculation = new Date().getFullYear() - 2002
 
@@ -104,6 +105,7 @@ export const enUS = {
         ],
         link: `https://consultoriaexcelencia.com.br/`,
         img: project1,
+        type: 'desktop',
       },
       {
         title: `Power Portal`,
@@ -115,6 +117,7 @@ export const enUS = {
         ],
         link: `https://powerportal.com.br/`,
         img: project2,
+        type: 'desktop',
       },
       {
         title: `Consultoria Excelência - Blog`,
@@ -127,6 +130,7 @@ export const enUS = {
         ],
         link: `https://consultoriaexcelencia.com.br/blog`,
         img: project3,
+        type: 'desktop',
       },
       {
         title: `Ignite Feed`,
@@ -138,6 +142,7 @@ export const enUS = {
         ],
         link: `https://marettialine.github.io/ignite-feed/`,
         img: project4,
+        type: 'desktop',
       },
       {
         title: `Ignite To Do List`,
@@ -149,6 +154,7 @@ export const enUS = {
         ],
         link: `https://marettialine.github.io/ignite-to-do-list/`,
         img: project5,
+        type: 'desktop',
       },
       {
         title: `Ignite Timer`,
@@ -160,6 +166,15 @@ export const enUS = {
         ],
         link: `https://marettialine.github.io/ignite-timer/`,
         img: project6,
+        type: 'desktop',
+      },
+      {
+        title: `PoupApp`,
+        description: `The PoupApp finance app, developed in Power Apps, allows you to control your income and expenses in a simple and practical way. Using an Excel spreadsheet as the database, it is possible to view the total balance, add new transactions, edit or delete existing records, ensuring efficient financial management that is updated in real time.`,
+        technologies: [<Icons.PowerApps key="PowerApps" />],
+        link: `https://marettialine.github.io/poupapp`,
+        img: project7,
+        type: 'mobile',
       },
     ],
     visit: 'Visit Page',

@@ -76,8 +76,12 @@ export const ProjectsContainer = styled.div`
           order: 2;
         }
 
-        img {
+        .desktop {
           width: 27rem;
+        }
+
+        .mobile {
+          width: 15rem;
         }
 
         p {
@@ -136,9 +140,21 @@ export const ProjectsContainer = styled.div`
         @media screen and (max-width: 680px) {
           width: 100%;
 
-          img {
+          img,
+          .desktop,
+          .mobile {
             width: 100%;
             margin: 0 auto;
+          }
+
+          .technologies {
+            flex-wrap: wrap;
+
+            svg,
+            img {
+              width: 35px;
+              height: 35px;
+            }
           }
         }
       }
