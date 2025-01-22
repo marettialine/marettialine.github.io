@@ -11,6 +11,7 @@ import nodeIcon from '../../assets/icon_node.png'
 import pythonIcon from '../../assets/icon_python.png'
 import javaIcon from '../../assets/icon_java.png'
 import powerAutomateIcon from '../../assets/icon_power_automate.png'
+import powerAppsIcon from '../../assets/icon_power_apps.png'
 import figmaIcon from '../../assets/icon_figma.png'
 
 import { ProgrammingLanguagesContainer, TechnologiesContainer } from './styles'
@@ -80,6 +81,10 @@ export function Technologies() {
                   Power Automate
                 </li>
                 <li>
+                  <img src={powerAppsIcon} alt="" />
+                  Power Apps
+                </li>
+                <li>
                   <img src={figmaIcon} alt="" />
                   Figma
                 </li>
@@ -128,6 +133,10 @@ export function Technologies() {
                 <li>
                   <img src={powerAutomateIcon} alt="" />
                   Power Automate
+                </li>
+                <li>
+                  <img src={powerAppsIcon} alt="" />
+                  Power Apps
                 </li>
                 <li>
                   <img src={figmaIcon} alt="" />
