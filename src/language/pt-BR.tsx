@@ -164,7 +164,7 @@ export const ptBR = {
           <Icons.StyledComponents key="StyledComponents" />,
           <Icons.TypeScript key="TypeScript" />,
         ],
-        link: `https://marettialine-ignitetimer.vercel.app/`,
+        link: `https://marettialine-ignite-timer.vercel.app`,
         img: project6,
         type: 'desktop',
       },
